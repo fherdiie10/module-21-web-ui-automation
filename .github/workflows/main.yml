@@ -1,0 +1,44 @@
+name: API and UI Automation Test
+
+on:
+  push:
+  pull_request:
+    types: [closed]
+
+permissions:
+  contents: read
+
+jobs:
+  automation-test:
+    if: ${{ github.event_name == 'push' || github.event.pull_request.merged == true }}
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v7
+
+      - name: Setup Java 21
+        uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: '21'
+
+      - name: Setup Gradle
+        uses: gradle/actions/setup-gradle@v6
+
+      - name: Give Permission to Gradle
+        run: chmod +x gradlew
+
+      - name: Run Automation Test
+        run: xvfb-run --auto-servernum ./gradlew :app:test --no-daemon
+
+      - name: Upload Test Report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: automation-test-report
+          path: |
+            app/build/reports/tests/test/
+            app/build/test-results/test/
+          if-no-files-found: warn
