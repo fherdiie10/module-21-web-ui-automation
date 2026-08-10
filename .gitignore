@@ -1,0 +1,16 @@
+# Gradle
+.gradle/
+**/build/
+
+# Java
+*.class
+
+# VS Code
+.vscode/
+
+# Log
+*.log
+
+# File sistem
+.DS_Store
+Thumbs.db
