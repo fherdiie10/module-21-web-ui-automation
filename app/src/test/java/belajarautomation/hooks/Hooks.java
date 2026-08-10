@@ -2,6 +2,7 @@ package belajarautomation.hooks;
 
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -12,7 +13,7 @@ public class Hooks {
     @Before
     public void setUp() {
         driver = new ChromeDriver();
-        driver.manage().window().maximize();
+        driver.manage().window().setSize(new Dimension(1920, 1080));
     }
 
 @After
