@@ -1,6 +1,6 @@
 package belajarautomation.web.stepdefinitions;
 
-import belajarautomation.hooks.Hooks;
+import belajarautomation.web.hooks.Hooks;
 import belajarautomation.web.pages.LoginPage;
 import belajarautomation.web.pages.ProductsPage;
 import io.cucumber.java.en.Given;
