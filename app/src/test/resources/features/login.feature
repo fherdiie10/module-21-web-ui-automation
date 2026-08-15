@@ -1,3 +1,4 @@
+@web
 Feature: Login SauceDemo
 
   Scenario: Login berhasil menggunakan username dan password yang benar
@@ -14,7 +15,7 @@ Feature: Login SauceDemo
     And pengguna menekan tombol login
     Then pengguna melihat pesan error login
 
-      Scenario Outline: Login gagal menggunakan data batas
+  Scenario Outline: Login gagal menggunakan data batas
     Given pengguna membuka halaman login SauceDemo
     When pengguna memasukkan username "<username>"
     And pengguna memasukkan password "<password>"
@@ -22,7 +23,7 @@ Feature: Login SauceDemo
     Then pengguna tetap berada di halaman login dan melihat pesan error
 
     Examples:
-      | username                                                                                                                                             | password     |
-      |                                                                                                                                                      | secret_sauce |
-      | standard_user                                                                                                                                        |              |
+      | username                                                                                                                                              | password     |
+      |                                                                                                                                                       | secret_sauce |
+      | standard_user                                                                                                                                         |              |
       | aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa | secret_sauce |

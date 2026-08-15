@@ -1,4 +1,4 @@
-package belajarautomation.pages;
+package belajarautomation.web.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

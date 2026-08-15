@@ -2,9 +2,11 @@ plugins {
     id 'java'
 }
 
+
 repositories {
     mavenCentral()
 }
+
 
 dependencies {
 
@@ -13,16 +15,73 @@ dependencies {
     testImplementation 'io.cucumber:cucumber-java'
     testImplementation 'io.cucumber:cucumber-junit-platform-engine'
 
+
     // JUnit
     testImplementation platform('org.junit:junit-bom:6.1.1')
     testImplementation 'org.junit.jupiter:junit-jupiter'
     testImplementation 'org.junit.platform:junit-platform-suite'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 
+
     // Selenium
     testImplementation 'org.seleniumhq.selenium:selenium-java:4.46.0'
+
+
+    // Rest Assured API
+    testImplementation 'io.rest-assured:rest-assured:5.5.0'
+
+
+    // JSON
+    testImplementation 'com.fasterxml.jackson.core:jackson-databind:2.17.0'
+
 }
 
+
 test {
+
     useJUnitPlatform()
+
+}
+
+
+/*
+ API Automation Test
+ Run:
+ ./gradlew :app:apiTest
+*/
+
+tasks.register('apiTest', Test) {
+
+    group = "verification"
+    description = "Run API automation tests using Cucumber"
+
+    useJUnitPlatform()
+
+    testClassesDirs = sourceSets.test.output.classesDirs
+    classpath = sourceSets.test.runtimeClasspath
+
+    include '**/RunApiTest.class'
+
+}
+
+
+
+/*
+ Web UI Automation Test
+ Run:
+ ./gradlew :app:webTest
+*/
+
+tasks.register('webTest', Test) {
+
+    group = "verification"
+    description = "Run Web UI automation tests using Selenium Cucumber"
+
+    useJUnitPlatform()
+
+    testClassesDirs = sourceSets.test.output.classesDirs
+    classpath = sourceSets.test.runtimeClasspath
+
+    include '**/RunCucumberTest.class'
+
 }
