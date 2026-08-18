@@ -1,8 +1,8 @@
-# Web UI & API Automation Testing
+# Final Project - Web UI & API Automation Testing
 
-Project ini merupakan project Automation Testing menggunakan Java dengan implementasi Web UI Automation dan API Automation.
+Project ini merupakan **Final Project Automation Testing** menggunakan Java dengan implementasi Web UI Automation dan API Automation.
 
-Project ini dibuat menggunakan pendekatan **Behavior Driven Development (BDD)** dengan Cucumber serta menggunakan Gradle sebagai build automation tool.
+Project ini dibuat sebagai implementasi pengujian otomatis dengan pendekatan **Behavior Driven Development (BDD)** menggunakan Cucumber serta menggunakan Gradle sebagai build automation tool.
 
 ---
 
