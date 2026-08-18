@@ -42,6 +42,15 @@ public class UserSteps {
     }
 
 
+    // Tambahan untuk negative case
+    @When("I send GET request to get user by id {string}")
+    public void iSendGETRequestToGetUserById(String userId) {
+
+        response = userClient.getUserById(userId);
+
+    }
+
+
     @Then("response status code should be {int}")
     public void responseStatusCodeShouldBe(int expectedStatusCode) {
 

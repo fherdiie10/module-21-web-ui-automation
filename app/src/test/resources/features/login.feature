@@ -27,3 +27,13 @@ Feature: Login SauceDemo
       |                                                                                                                                                       | secret_sauce |
       | standard_user                                                                                                                                         |              |
       | aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa | secret_sauce |
+
+  Scenario: Checkout produk berhasil sampai selesai
+    Given pengguna membuka halaman login SauceDemo
+    When pengguna memasukkan username "standard_user"
+    And pengguna memasukkan password "secret_sauce"
+    And pengguna menekan tombol login
+    And pengguna menambahkan produk ke cart
+    And pengguna membuka halaman cart
+    And pengguna melakukan checkout
+    Then pengguna berhasil menyelesaikan checkout
