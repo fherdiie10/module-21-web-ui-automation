@@ -43,6 +43,7 @@ public class LoginSteps {
         loginPage.openLoginPage();
 
         pause(1000);
+
     }
 
 
@@ -52,6 +53,7 @@ public class LoginSteps {
         loginPage.enterUsername(username);
 
         pause(500);
+
     }
 
 
@@ -61,15 +63,16 @@ public class LoginSteps {
         loginPage.enterPassword(password);
 
         pause(500);
+
     }
 
 
     @When("pengguna menekan tombol login")
     public void penggunaMenekanTombolLogin() {
 
-        pause(500);
-
         loginPage.clickLoginButton();
+
+        pause(3000);
 
     }
 
@@ -99,8 +102,6 @@ public class LoginSteps {
             "Pesan error tidak sesuai. Pesan aktual: " + errorMessage
         );
 
-        pause(1500);
-
     }
 
 
@@ -118,8 +119,6 @@ public class LoginSteps {
             !errorMessage.isEmpty(),
             "Pesan error tidak muncul"
         );
-
-        pause(1500);
 
     }
 
@@ -145,6 +144,11 @@ public class LoginSteps {
         productsPage.openCart();
 
         pause(1000);
+
+        assertTrue(
+            cartPage.isCartPageDisplayed(),
+            "Halaman cart tidak terbuka"
+        );
 
     }
 
